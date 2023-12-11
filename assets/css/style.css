@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-  color: #d9ba85;
+  color: #10632a;
   text-decoration: none;
 }
 
@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Noto Sans Vietnamese', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -134,7 +134,7 @@ h6 {
 
 #topbar .contact-info i {
   font-style: normal;
-  color: #d9ba85;
+  color: #10632a;
 }
 
 #topbar .contact-info i span {
@@ -183,6 +183,9 @@ h6 {
   background: rgba(0, 0, 0, 0.85);
   border-bottom: 1px solid #37332a;
 }
+
+
+
 
 #header .logo {
   font-size: 28px;
@@ -276,7 +279,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #d9ba85;
+  color: #106023;
 }
 
 .navbar .dropdown ul {
@@ -448,6 +451,7 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -988,9 +992,13 @@ section {
 /*--------------------------------------------------------------
 # Specials
 --------------------------------------------------------------*/
+
 .specials {
   overflow: hidden;
+  background: #1e1e1e; /* Màu nền tối */
 }
+
+
 
 .specials .nav-tabs {
   border: 0;
