@@ -70,7 +70,7 @@
           <li><a class="nav-link scrollto active" href="#hero">Trang chủ</a></li>
           <li><a class="nav-link scrollto" href="#about">Giới thiệu</a></li>
           <li><a class="nav-link scrollto" href="#specials">Bài viết</a></li>
-          <li><a class="nav-link scrollto" href="#events">Dịch vụ</a></li>
+          <li><a class="nav-link scrollto" href="#events">Nhà hàng</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Bộ sưu tập</a></li>
           <li><a class="nav-link scrollto" href="#contact">Liên hệ</a></li>
         </ul>
@@ -708,319 +708,288 @@
 
       </div>
     </section><!-- End Specials Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Restaurant Popup</title>
+      <style>
+        /* CSS */
+        .restaurant {
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    
+        .restaurant-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+        }
+    
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+    
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(13, 109, 34);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+    
+        .popup-gallery img {
+            width: 30%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+        }
+    
+        .popup-gallery img:hover {
+            transform: scale(1.2); /* Phóng to ảnh lên 120% */
+        }
+    
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    
+        .popup-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .popup-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+    
+        .popup-gallery img {
+            width: 30%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    
+        @media (max-width: 768px) {
+            .popup-gallery img {
+                width: 100%;
+            }
+        }
 
-    <!-- ======= Events Section ======= -->
+        .restaurant-container {
+    display: flex; /* Sử dụng flexbox để xếp các nhà hàng trên cùng một hàng */
+    flex-wrap: wrap; /* Cho phép các nhà hàng chuyển dòng nếu không đủ không gian */
+    justify-content: space-between; /* Căn các nhà hàng ra hai bên */
+}
+
+.restaurant {
+    flex-basis: calc(20% - 20px); /* Đặt kích thước cố định cho mỗi nhà hàng (20% của container) */
+    margin-bottom: 20px; /* Tạo khoảng cách dưới cho các nhà hàng */
+}
+
+@media (max-width: 768px) {
+    .restaurant {
+        flex-basis: calc(40% - 20px); /* Trên thiết bị di động, mỗi nhà hàng chiếm 40% của container */
+    }
+}
+.restaurant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.restaurant-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+}
+
+
+      </style>
+    </head>
+    <body>
+    
     <section id="events" class="events">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
-          <h2>Dịch vụ</h2>
+          <h2>Nhà hàng</h2>
           <p>Kinh doanh du lịch cộng đồng</p>
         </div>
-
-        <div class="events-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="row event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/phase1.jpeg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Nhà hàng - Quán ăn</h3>
-                  <p>
-                    Đến A Lưới, bạn sẽ được thưởng thức hương vị ẩm thực đậm đà và khó quên của ẩm thực cộng đồng dân cư bản địa hoặc những món ăn dân dã, quen thuộc nhưng lại mang một hương vị tươi ngon khó nơi nào có được. Sau đây chúng tớ sẽ ghi chú một số Nhà hàng - quán ăn để bạn dễ đễ dàng chọn lựa hơn.
-                  </p>
-                  <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                
-                        table, th, td {
-                            border: 1px solid black;
-                        }
-                
-                        th, td {
-                            text-align: center;
-                            font-size: small;
-                            padding: 8px;
-                        }
-                    </style>
-                    <title>Table Example</title>
-                </head>
-                <body>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>TÊN ĐIỂM ĂN UỐNG</th>
-                                <th>ĐỊA ĐIỂM</th>
-                                <th>LIÊN HỆ</th>
-                                <th>DỊCH VỤ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Nhà hàng Bằng Lăng</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0914.040.885</td>
-                                <td>- Ăn trưa, tối</td>
-                            </tr>
-                            <tr>
-                                <td>Nhà hàng Hoàng Linh</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0384.345.222</td>
-                                <td>- Ăn trưa, tối</td>
-                            </tr>
-                            <tr>
-                                <td>Nhà hàng Nhật Minh</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0775.505.345</td>
-                                <td>- Ăn trưa, tối</td>
-                            </tr>
-                            <tr>
-                                <td>Trang Viên Quán</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0935.646.818</td>
-                                <td>- Ăn trưa, tối</td>
-                            </tr>
-                            <tr>
-                                <td>A Lá Quán</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0944.500.288</td>
-                                <td>- Đặc sản A Lưới - Ăn trưa, tối</td>
-                            </tr>
-                            <tr>
-                              <td>Nhà hàng Hằng 3</td>
-                              <td>thị trấn A Lưới</td>
-                              <td>0914.701.025</td>
-                              <td>- Ăn trưa, tối</td>
-                          </tr>  
-                          <tr>
-                            <td>Nhà hàng Lan Chi</td>
-                            <td>thị trấn A Lưới</td>
-                            <td>0948.588.936</td>
-                            <td>- Đặc sản A Lưới - Ăn trưa, tối</td>
-                          </tr> 
-                        <tr class="hidden-row">
-                          <td>Tam Mao Quán</td>
-                          <td>thị trấn A Lưới</td>
-                          <td>0868.002.559</td>
-                          <td>- Ăn trưa, tối</td>
-                      </tr> 
-                            <!-- Add more rows with data as needed -->
-                        </tbody>
-                    </table>
-                </body>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="row event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/event-private.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Sản vật địa phương</h3>
-                  <p>
-                    Sau khi tham quan A Lưới, nếu bạn muốn mua sản vật địa phương về làm quà lưu niệm, hãy ghé những địa chỉ này nhé!
-                  </p>
-                  <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                
-                        table, th, td {
-                            border: 1px solid black;
-                        }
-                
-                        th, td {
-                            text-align: center;
-                            font-size: small;
-                            padding: 8px;
-                        }
-                    </style>
-                    <title>Table Example</title>
-                </head>
-                <body>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>TÊN ĐIỂM BÁN</th>
-                                <th>ĐỊA ĐIỂM</th>
-                                <th>LIÊN HỆ</th>
-                                <th>DỊCH VỤ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A Lá Quán</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0944.500.288</td>
-                                <td>- Đặc sản A Lưới</td>
-                            </tr>
-                            <tr>
-                                <td>Lan Chi</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0948.588.936</td>
-                                <td>- Đặc sản A Lưới</td>
-                            </tr>
-                            <tr>
-                                <td>Kim Ly</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0326.010.086</td>
-                                <td>- Đặc sản A Lưới (rượu nếp than)</td>
-                            </tr>
-                            <tr>
-                                <td>Mường A Lưới</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>0326.048.199</td>
-                                <td>- Đặc sản A Lưới (rượu sim)</td>
-                            </tr>
-                            <tr>
-                                <td>Vell He</td>
-                                <td>thị trấn A Lưới</td>
-                                <td>035.880.2567</td>
-                                <td>- Đặc sản A Lưới (nông sản, mật ong, Dèng)</td>
-                            </tr>
-                            <tr>
-                              <td>A Rel Linh</td>
-                              <td>thị trấn A Lưới</td>
-                              <td>036.459.4789</td>
-                              <td>- Thuê trang phục, cung cấp hàng lưu niệm</td>
-                          </tr>  
-                          <tr>
-                            <td>Mai Thị Hợp</td>
-                            <td>thị trấn A Lưới</td>
-                            <td>096.833.4263</td>
-                            <td>- Thuê trang phục, các sản phẩm Dèng</td>
-                        </tr> 
-                        <tr class="hidden-row">
-                          <td>Ten Ten</td>
-                          <td>thị trấn A Lưới</td>
-                          <td>033.939.0975</td>
-                          <td>- Thuê trang phục, cùng cấp hàng lưu niệm</td>
-                      </tr> 
-                            <!-- Add more rows with data as needed -->
-                        </tbody>
-                    </table>
-                </body>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="row event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/homstay.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Homestay - Nhà nghỉ</h3>
-                  <p>
-                    Bạn đến A Lưới nhưng chưa biết nghỉ dừng chân ở địa điểm nào. Chúng tớ đã ghi chú một số Homestay - Nhà nghỉ để bạn dễ dàng chọn lựa hơn
-                  </p>
-                  <style>
-                    table, th, td {
-                      border: 1px solid black;
-                      border-collapse: collapse;
-                    }
-                    th, td {
-                      padding: 5px;
-                      text-align: left;    
-                    }
-                  </style>
-                  </head>
-                  <body>
-                  
-                  <table>
-                    <tr>
-                      <th rowspan="2">TÊN ĐIỂM LƯU TRÚ</th>
-                      <th rowspan="2">ĐỊA ĐIỂM</th>
-                      <th rowspan="2">LIÊN HỆ</th>
-                      <th rowspan="2">DỊCH VỤ</th>
-                      <th colspan="3">SỐ LƯỢNG PHÒNG</th>
-                      <th rowspan="2">Số giường</th>
-                      <th rowspan="2">Số người</th>
-                      <th rowspan="2">Công suất</th>
-                    </tr>
-                    <tr>
-                      <!-- These are the sub-headings for the merged "Số lượng phòng" column -->
-                      <th>Đơn</th>
-                      <th>Đôi</th>
-                      <th>Căn</th>
-                    </tr>
-                    <!-- Example row with data -->
-                    <tr>
-                      <td>Homestay Hồng Hà</td>
-                      <td>xã Hồng Hà</td>
-                      <td>0396.523.118</td>
-                      <td>Văn nghệ, lửa trại, âm nhạc</td>
-                      <td></td> <!-- Số lượng phòng Đơn -->
-                      <td></td> <!-- Số lượng phòng Đôi -->
-                      <td></td> <!-- Số lượng phòng Căn -->
-                      <td>1</td> <!-- Số giường -->
-                      <td></td> <!-- Số người -->
-                      <td>30</td> <!-- Công suất -->
-                    </tr>
-                    <tr>
-                      <td>Jim House Homstay</td>
-                      <td>xã Hồng Hà</td>
-                      <td>0898.171.889</td>
-                      <td>Lưu trú, ẩm thực trải nghiệm</td>
-                      <td></td> <!-- Số lượng phòng Đơn -->
-                      <td>2</td> <!-- Số lượng phòng Đôi -->
-                      <td>2</td> <!-- Số lượng phòng Căn -->
-                      <td></td> <!-- Số giường -->
-                      <td></td> <!-- Số người -->
-                      <td>30 </td> <!-- Công suất -->
-                    </tr>
-                    <tr>
-                      <td>Hachi Homestay & Spa</td>
-                      <td>xã Hồng Thượng</td>
-                      <td>0368.134.670</td>
-                      <td>BBQ tối, lưu trú homestay</td>
-                      <td></td> <!-- Số lượng phòng Đơn -->
-                      <td></td> <!-- Số lượng phòng Đôi -->
-                      <td></td> <!-- Số lượng phòng Căn -->
-                      <td>4</td> <!-- Số giường -->
-                      <td></td> <!-- Số người -->
-                      <td>30</td> <!-- Công suất -->
-                    </tr>
-                    <tr>
-                      <td>Homestay Hương Danh</td>
-                      <td>xã A Roàng</td>
-                      <td>0976.920.119</td>
-                      <td>Lửa trại, ẩm thực trải nghiệm, lưu trú</td//>
-                      <td></td> <!-- Số lượng phòng Đơn -->
-                      <td></td> <!-- Số lượng phòng Đôi -->
-                      <td></td> <!-- Số lượng phòng Căn -->
-                      <td>3</td> <!-- Số giường -->
-                      <td></td> <!-- Số người -->
-                      <td>30</td> <!-- Công suất -->
-                    </tr>
-                    <!-- Add more rows as needed -->
-                  </table>
-                  
-
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
+        <div class="restaurant-container">
+          <div class="restaurant" data-name="Quán A Lá" data-address="Thị trấn A Lưới" data-phone="0944.500.288" data-service="Đặc sản A Lưới, ăn trưa - tối">
+            <img src="assets/img/ala3.jpg" alt="Restaurant 1" class="restaurant-img">
+            <span class="restaurant-name">Quán A Lá</span>
+            <!-- Thêm 3 ảnh chi tiết của nhà hàng 1 -->
+            <div class="restaurant-details" style="display: none;">
+              <img src="assets/img/ala1.jpg" alt="Restaurant 1 Detail 1">
+              <img src="assets/img/ala3.jpg" alt="Restaurant 1 Detail 2">
+              <img src="assets/img/ala2.jpg" alt="Restaurant 1 Detail 3">
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
+          <div class="restaurant" data-name="Hồ Trâm" data-address="Thị trấn A Lưới" data-phone="0976.920.119" data-service="Lưu trú, ẩm thực, trải nghiệm">
+            <img src="assets/img/hotram1.jpg" alt="Restaurant 2" class="restaurant-img">
+            <span class="restaurant-name">Hồ Trâm</span>
+            <!-- Thêm 3 ảnh chi tiết của nhà hàng 1 -->
+            <div class="restaurant-details" style="display: none;">
+              <img src="assets/img/hotram1.jpg" alt="Restaurant 1 Detail 1">
+              <img src="assets/img/hotram2.jpg" alt="Restaurant 1 Detail 2">
+              <img src="assets/img/hotram3.jpg" alt="Restaurant 1 Detail 3">
+            </div>
+          </div>
+          <div class="restaurant" data-name="Hue Crown A Luoi" data-address="A Nôr - Hồng Kim - A Lưới - Huế - Việt Nam" data-phone="0935.668.123" data-service="Lưu trú, ẩm thực, trải nghiệm">
+            <img src="assets/img/crow0.jpg" alt="Restaurant 3 " class="restaurant-img">
+            <span class="restaurant-name">Hue Crown A Luoi</span>
+            <!-- Thêm 3 ảnh chi tiết của nhà hàng 1 -->
+            <div class="restaurant-details" style="display: none;">
+              <img src="assets/img/crow1.jpg" alt="Restaurant 1 Detail 1">
+              <img src="assets/img/crow2.jpg" alt="Restaurant 1 Detail 2">
+              <img src="assets/img/crow3.jpg" alt="Restaurant 1 Detail 3">
+            </div>
+          </div>
 
+          <div class="restaurant" data-name="Mường Homestay" data-address=" 73 đường Bắc Sơn, thị trấn A Lưới " data-phone=" 0345.55.77.99" data-service="Lưu trú, ẩm thực, trải nghiệm">
+            <img src="assets/img/muong1.jpg" alt="Restaurant 3 " class="restaurant-img">
+            <span class="restaurant-name">Mường Homestay</span>
+            <!-- Thêm 3 ảnh chi tiết của nhà hàng 1 -->
+            <div class="restaurant-details" style="display: none;">
+              <img src="assets/img/muong2.jpg" alt="Restaurant 1 Detail 1">
+              <img src="assets/img/muong3.jpg" alt="Restaurant 1 Detail 2">
+              <img src="assets/img/muong4.jpg" alt="Restaurant 1 Detail 3">
+            </div>
+          </div>
+
+          <div class="restaurant" data-name="Quán 79" data-address="thị trấn A Lưới " data-phone=" 0868.002.559" data-service="Ăn trưa, tối">
+            <img src="assets/img/phase1.jpeg" alt="Restaurant 3 " class="restaurant-img">
+          <span class="restaurant-name">Quán 79</span>
+            <!-- Thêm 3 ảnh chi tiết của nhà hàng 1 -->
+            <div class="restaurant-details" style="display: none;">
+              <img src="assets/img/phase1.jpeg" alt="Restaurant 1 Detail 1">
+              <img src="assets/img/791.jpg" alt="Restaurant 1 Detail 2">
+              <img src="assets/img/792.jpg" alt="Restaurant 1 Detail 3">
+            </div>
+          </div>
+          <!-- Thêm nhà hàng khác nếu cần -->
+        </div>
       </div>
     </section><!-- End Events Section -->
-
+    
+    <!-- Popup sẽ ở ngoài phạm vi của nhà hàng container để đảm bảo mỗi popup kết hợp với mỗi nhà hàng -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close" id="close">&times;</span>
+        <div class="popup-info">
+          <h2 id="popup-name">Quán A Lá</h2>
+          <p id="popup-address">Địa chỉ: Thị trấn A Lưới</p>
+          <p id="popup-service">Dịch vụ: Đặc sản A Lưới, ăn trưa - tối</p>
+          <p id="popup-phone">Di động: 0944.500.288</p>
+        </div>
+        <div class="popup-gallery"></div>
+      </div>
+    </div>
+    
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+        const restaurants = document.querySelectorAll('.restaurant');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.getElementById('close');
+        const popupName = document.getElementById('popup-name');
+        const popupAddress = document.getElementById('popup-address');
+        const popupService = document.getElementById('popup-service'); // Thêm phần tử mới
+        const popupPhone = document.getElementById('popup-phone');
+        const popupGallery = document.querySelector('.popup-gallery');
+    
+        restaurants.forEach(restaurant => {
+            restaurant.addEventListener('click', function() {
+                const name = restaurant.getAttribute('data-name');
+                const address = restaurant.getAttribute('data-address');
+                const service = restaurant.getAttribute('data-service'); // Thêm dịch vụ của nhà hàng
+                const phone = restaurant.getAttribute('data-phone');
+    
+                popupName.textContent = name;
+                popupAddress.textContent = "Địa chỉ: " + address;
+                popupService.textContent = "Dịch vụ: " + service; // Thay đổi thông tin dịch vụ
+                popupPhone.textContent = "Di động: " + phone;
+    
+                // Clear existing gallery images
+                popupGallery.innerHTML = '';
+    
+                const detailsDiv = restaurant.querySelector('.restaurant-details');
+                if (detailsDiv) {
+                  const detailImgs = detailsDiv.querySelectorAll('img');
+                  detailImgs.forEach(img => {
+                    const imgClone = img.cloneNode(true);
+                    imgClone.addEventListener('click', function() {
+                      showFullImage(imgClone.src);
+                    });
+                    popupGallery.appendChild(imgClone);
+                  });
+                }
+              
+                popup.style.display = 'block';
+            });
+        });
+    
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    
+        function showFullImage(src) {
+            const fullImageContainer = document.createElement('div');
+            fullImageContainer.classList.add('full-image-container');
+            
+            const fullImage = document.createElement('img');
+            fullImage.src = src;
+            
+            fullImageContainer.appendChild(fullImage);
+            document.body.appendChild(fullImageContainer);
+            
+            fullImageContainer.addEventListener('click', function() {
+                document.body.removeChild(fullImageContainer);
+            });
+        }
+    });
+    </script>
+    
+    </body>
+    </html>
+    
+    
+    
+    
+    
     <!-- ======= Book A Table Section ======= -->
     <section id="book-a-table" class="book-a-table">
       <div class="container" data-aos="fade-up">
